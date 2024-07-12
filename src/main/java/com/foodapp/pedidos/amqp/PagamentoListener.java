@@ -1,14 +1,13 @@
 package com.foodapp.pedidos.amqp;
 
 import com.foodapp.pedidos.dto.PagamentoDTO;
-import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 @Component
 public class PagamentoListener {
 
-    @RabbitListener(queues = "pagamento.concluido")
+    @RabbitListener(queues = "pagamento.detalhes-pedido")
     public void recebeMensagem(PagamentoDTO pagamentoDTO){
 
         String mensagem =
@@ -19,10 +18,10 @@ public class PagamentoListener {
                 Valor R$: %s
                 Status: %s
                 """.formatted(pagamentoDTO.getNome(),
-                pagamentoDTO.getId(),
-                pagamentoDTO.getPedidoId(),
-                pagamentoDTO.getValor(),
-                pagamentoDTO.getStatus());
+                        pagamentoDTO.getId(),
+                        pagamentoDTO.getPedidoId(),
+                        pagamentoDTO.getValor(),
+                        pagamentoDTO.getStatus());
 
         System.out.println("Pagamento recebido " + mensagem);
 

@@ -2,6 +2,7 @@ package com.foodapp.pedidos.dto;
 
 import com.foodapp.pedidos.enums.StatusPagamento;
 import lombok.Data;
+
 import java.math.BigDecimal;
 
 @Data

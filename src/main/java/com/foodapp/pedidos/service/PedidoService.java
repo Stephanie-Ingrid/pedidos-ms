@@ -2,8 +2,8 @@ package com.foodapp.pedidos.service;
 
 import com.foodapp.pedidos.dto.PedidoDto;
 import com.foodapp.pedidos.dto.StatusPedidoDto;
-import com.foodapp.pedidos.model.Pedido;
 import com.foodapp.pedidos.enums.StatusPedido;
+import com.foodapp.pedidos.model.Pedido;
 import com.foodapp.pedidos.repository.PedidoRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;

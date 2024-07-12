@@ -1,7 +1,7 @@
 package com.foodapp.pedidos.repository;
 
-import com.foodapp.pedidos.model.Pedido;
 import com.foodapp.pedidos.enums.StatusPedido;
+import com.foodapp.pedidos.model.Pedido;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
