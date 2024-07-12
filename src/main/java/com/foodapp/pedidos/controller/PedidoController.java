@@ -1,7 +1,7 @@
 package com.foodapp.pedidos.controller;
 
 import com.foodapp.pedidos.dto.PedidoDto;
-import com.foodapp.pedidos.dto.StatusDto;
+import com.foodapp.pedidos.dto.StatusPedidoDto;
 import com.foodapp.pedidos.service.PedidoService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -49,7 +49,7 @@ public class PedidoController {
     }
 
     @PutMapping("/{id}/status")
-    public ResponseEntity<PedidoDto> atualizaStatus(@PathVariable Long id, @RequestBody StatusDto status){
+    public ResponseEntity<PedidoDto> atualizaStatus(@PathVariable Long id, @RequestBody StatusPedidoDto status){
         PedidoDto dto = service.atualizaStatus(id, status);
 
         return ResponseEntity.ok(dto);

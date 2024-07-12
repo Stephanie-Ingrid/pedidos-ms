@@ -1,6 +1,6 @@
 package com.foodapp.pedidos.dto;
 
-import com.foodapp.pedidos.model.Status;
+import com.foodapp.pedidos.enums.StatusPedido;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,6 +10,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class StatusDto {
-    private Status status;
+public class StatusPedidoDto {
+
+    private StatusPedido status;
+
 }

@@ -1,6 +1,6 @@
 package com.foodapp.pedidos.dto;
 
-import com.foodapp.pedidos.model.Status;
+import com.foodapp.pedidos.enums.StatusPedido;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,7 +18,7 @@ public class PedidoDto {
 
     private Long id;
     private LocalDateTime dataHora;
-    private Status status;
+    private StatusPedido status;
     private List<ItemDoPedidoDto> itens = new ArrayList<>();
 
 

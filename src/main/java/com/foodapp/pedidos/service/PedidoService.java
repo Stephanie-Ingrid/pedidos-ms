@@ -1,9 +1,9 @@
 package com.foodapp.pedidos.service;
 
 import com.foodapp.pedidos.dto.PedidoDto;
-import com.foodapp.pedidos.dto.StatusDto;
+import com.foodapp.pedidos.dto.StatusPedidoDto;
 import com.foodapp.pedidos.model.Pedido;
-import com.foodapp.pedidos.model.Status;
+import com.foodapp.pedidos.enums.StatusPedido;
 import com.foodapp.pedidos.repository.PedidoRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -43,14 +43,14 @@ public class PedidoService {
         Pedido pedido = modelMapper.map(dto, Pedido.class);
 
         pedido.setDataHora(LocalDateTime.now());
-        pedido.setStatus(Status.REALIZADO);
+        pedido.setStatus(StatusPedido.REALIZADO);
         pedido.getItens().forEach(item -> item.setPedido(pedido));
         Pedido salvo = repository.save(pedido);
 
         return modelMapper.map(pedido, PedidoDto.class);
     }
 
-    public PedidoDto atualizaStatus(Long id, StatusDto dto) {
+    public PedidoDto atualizaStatus(Long id, StatusPedidoDto dto) {
 
         Pedido pedido = repository.porIdComItens(id);
 
@@ -71,7 +71,7 @@ public class PedidoService {
             throw new EntityNotFoundException();
         }
 
-        pedido.setStatus(Status.PAGO);
-        repository.atualizaStatus(Status.PAGO, pedido);
+        pedido.setStatus(StatusPedido.PAGO);
+        repository.atualizaStatus(StatusPedido.PAGO, pedido);
     }
 }

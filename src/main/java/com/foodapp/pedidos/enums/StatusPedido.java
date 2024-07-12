@@ -1,6 +1,6 @@
-package com.foodapp.pedidos.model;
+package com.foodapp.pedidos.enums;
 
-public enum Status {
+public enum StatusPedido {
     REALIZADO,
     CANCELADO,
     PAGO,

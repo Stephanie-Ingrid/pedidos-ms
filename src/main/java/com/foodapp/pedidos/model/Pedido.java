@@ -1,5 +1,6 @@
 package com.foodapp.pedidos.model;
 
+import com.foodapp.pedidos.enums.StatusPedido;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -27,7 +28,7 @@ public class Pedido {
     private LocalDateTime dataHora;
 
     @NotNull @Enumerated(EnumType.STRING)
-    private Status status;
+    private StatusPedido status;
 
     @OneToMany(cascade=CascadeType.PERSIST, mappedBy="pedido")
     private List<ItemDoPedido> itens = new ArrayList<>();
