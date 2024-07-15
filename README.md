@@ -1,6 +1,6 @@
 #  API Pedidos MS
 
-Simula microserviço de pedidos, tem integração com
+Simula microsserviço de pedidos, tem integração com
 Eureka Sever do Spring Cloud Netflix.
 
 ### Ferramentas para Executar
